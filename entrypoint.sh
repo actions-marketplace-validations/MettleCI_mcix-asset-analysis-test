@@ -61,7 +61,7 @@ report_display="${PARAM_REPORT#${GITHUB_WORKSPACE:-/github/workspace}/}"
 # ------------------------
 # Build command to execute
 # ------------------------
-
+ 
 # Start argv
 set -- "$MCIX_CMD" asset-analysis test
 
