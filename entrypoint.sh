@@ -53,10 +53,17 @@ require PARAM_REPORT "report"
 require PARAM_RULES "rules"
 
 # Ensure PARAM_REPORT will always be /github/workspace/...
-# so it survives container exit and is accessible as an artifact.
 PARAM_REPORT="$(resolve_workspace_path "$PARAM_REPORT")"
-mkdir -p "$(dirname "$PARAM_REPORT")"
-report_display="${PARAM_REPORT#${GITHUB_WORKSPACE:-/github/workspace}/}"
+
+# Fail if the report already exists which may be the case if this action is
+# invoked multiple times with the same report path but no. This is to prevent multiple 
+# test runs from overwriting each other's reports and causing confusion.
+if [ -e "$PARAM_REPORT" ]; then
+  die "JUnit report already exists: $PARAM_REPORT. Each invocation must use a unique report path."
+else
+  mkdir -p "$(dirname "$PARAM_REPORT")"
+  report_display="${PARAM_REPORT#${GITHUB_WORKSPACE:-/github/workspace}/}"
+fi
 
 # ------------------------
 # Build command to execute
