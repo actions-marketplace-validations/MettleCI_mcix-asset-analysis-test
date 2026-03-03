@@ -64,15 +64,15 @@ jobs:
 | `api-key` | ✅ |  | API key for authentication |
 | `url` | ✅ |  | URL of the DataStage server |
 | `user` | ✅ |  | Username for authentication |
-| `report` | ✅ | ./compile-report.xml | Path to output the compile report |
+| `report` | ✅ |  | Path to output the compile report |
 | `project` | ❌ |  | DataStage project name |
 | `project-id` | ❌ |  | DataStage project id |
 | `rules` | ✅ |  | Path to the compliance rules |
 | `included-tags` | ❌ |  | Comma-separated list of tags to include |
 | `excluded-tags` | ❌ |  | Comma-separated list of tags to exclude |
 | `test-suite` | ❌ | mcix tests | Test suite name |
-| `include-asset-in-test-name` | ❌ | false (if omitted) | Include asset names in test names in the report? (true/false) |
-| `ignore-test-failures` | ❌ | false (if omitted) | Ignore test failures (always return 0)? (true/false) |
+| `include-asset-in-test-name` | ❌ | false | Include asset names in test names in the report? (true/false) |
+| `ignore-test-failures` | ❌ | false | Ignore test failures (always return 0)? (true/false) |
 
 ---
 
