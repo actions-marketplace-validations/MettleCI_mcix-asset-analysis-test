@@ -146,7 +146,7 @@ write_step_summary() {
     # Generate summary
     # mcix-junit-to-summary [--annotations] [--max-annotations N] <junit.xml> [title]
     echo "Publishing JUnit results to GitHub..."
-    echo "$MCIX_JUNIT_CMD $MCIX_JUNIT_CMD_OPTIONS $REPORT_PATH \"$MCIX_CMD_NAME\""
+    echo "$MCIX_JUNIT_CMD $MCIX_JUNIT_CMD_OPTIONS $PARAM_REPORT \"$MCIX_CMD_NAME\""
     "$MCIX_JUNIT_CMD" \
       "$MCIX_JUNIT_CMD_OPTIONS" \
       "$PARAM_REPORT" \
