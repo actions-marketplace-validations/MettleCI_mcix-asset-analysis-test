@@ -179,6 +179,10 @@ if [ ! -e "/github/workspace/.git" ]; then
   die "Repo contents not found in /github/workspace. Did you forget to run actions/checkout@v4 before this action?"
 fi
 
+# Prepare a file to capture output so we can detect "It has been logged (ID ...)" failures.
+tmp_out="$(mktemp)"
+cleanup() { rm -f "$tmp_out"; }
+
 # Run the command, capture its output and status, but don't let `set -e` kill us.
 set +e
 "$@" 2>&1 | tee "$tmp_out"
