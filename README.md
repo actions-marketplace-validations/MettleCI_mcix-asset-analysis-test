@@ -5,7 +5,7 @@ Run **MCIX asset-level static analysis** for IBM DataStage NextGen inside your G
 This action wraps the `mcix asset-analysis test` command, letting you run MCIX compliance checks against one or more DataStage assets as part of CI/CD.
 
 <!-- BEGIN MCIX-ACTION-DOCS -->
-# MCIX Asset-Analysis Test Action
+# MCIX Asset-Analysis Test
 
 Run asset analysis tests on DataStage assets in an IBM Software Hub (Cloud Pak) project using the MettleCI MCIX CLI
 
@@ -30,7 +30,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Run MCIX Asset-Analysis Test Action
+      - name: Run MCIX Asset-Analysis Test
         id: asset-analysis-test
         uses: ${{ github.repository }}/asset-analysis/test@v1
         with:
