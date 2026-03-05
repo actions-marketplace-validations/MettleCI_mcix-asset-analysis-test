@@ -19,7 +19,7 @@
 #  \__\___||___/\__|
 # 
 
-name: 'MCIX Asset-Analysis Test Action'
+name: 'MCIX Asset-Analysis Test'
 author: 'Data Migrators Pty Ltd'
 description: 'Run asset analysis tests on DataStage assets in an IBM Software Hub (Cloud Pak) project using the MettleCI MCIX CLI'
 branding:
